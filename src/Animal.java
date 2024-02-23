@@ -1,44 +1,44 @@
-// Основной класс Animal
+// Base Animal class
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 public class Animal {
-    private String species;
-    private Date birthDate;
     private String name;
+    private Date birthDate;
+    private Species species;
     private List<String> commands;
 
-    // Конструктор Animal
-    public Animal(String species, Date birthDate, String name, List<String> commands) {
-        this.species = species;
-        this.birthDate = birthDate;
+    // Animal constructor
+    public Animal(String name, Date birthDate, Species species, ArrayList<String> commands) {
         this.name = name;
+        this.birthDate = birthDate;
+        this.species = species;
         this.commands = new ArrayList<>(commands);
     }
 
-        // Геттеры и сеттеры для полей
+        // Getters and setters:
+        public void setName(String name) {
+        this.name = name;
+    }
+
+        public String getName() {
+        return name;
+    }
+
+        public Date getBirthDate() {
+        return birthDate;
+    }
+
+        public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
         public String getSpecies() {
             return species;
         }
 
         public void setSpecies(String species) {
             this.species = species;
-        }
-
-        public Date getBirthDate() {
-            return birthDate;
-        }
-
-        public void setBirthDate(Date birthDate) {
-            this.birthDate = birthDate;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
         }
 
         public List<String> getCommands() {
