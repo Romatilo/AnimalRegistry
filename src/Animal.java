@@ -33,16 +33,15 @@ public class Animal {
         this.birthDate = birthDate;
     }
 
-        public String getSpecies() {
+        public Species getSpecies() {
             return species;
         }
 
-        public void setSpecies(String species) {
+        public void setSpecies(Species species) {
             this.species = species;
         }
 
-        public List<String> getCommands() {
-            return commands;
+        public List<String> getCommands() { return commands;
         }
 
         public void setCommands(List<String> commands) {
