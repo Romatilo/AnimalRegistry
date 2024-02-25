@@ -26,8 +26,9 @@ public class AnimalBuilder {
 
         System.out.print("Enter animal's name: ");
         String name = scanner.nextLine();
+
     /// birthdate input
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.mm.yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         Date birthDate = null;
         boolean validDate = false;
 
