@@ -20,33 +20,33 @@ public class Menu {
                     AnimalRegistry.animalRegistry.add(animal);
                     break;
                 case 2:
-                    for (Animal instance: AnimalRegistry.animalRegistry) {
+                    for (Animal instance : AnimalRegistry.animalRegistry) {
                         System.out.println(instance);
                     }
                     break;
-                case 3:hyb
+                case 3:
                     System.out.println("Enter animal's name:");
                     String animalName = scanner.nextLine();
                     for (Animal instance : AnimalRegistry.animalRegistry) {
-                        if (Animal.getName() == animalName) {
-                            Animal chosenAnimal = instance;
-                            Animal.showAnimalData();
+                        System.out.println(instance.getName());
+                        if (animalName.equals(instance.getName())) {
+                            instance.showAnimalData();
                     /*
                     Submenu for chosen animal
                      */
-                            int subChoice = 0;
-                            while (subChoice != 3) {
-                                System.out.println("\nSubmenu:");
-                                System.out.println("1. Show commands");
-                                System.out.println("2. Learn new command");
-                                System.out.println("3. Change animal species");
-                                System.out.println("4. Back to main menu");
-                                System.out.print("Enter your choice: ");
-                                subChoice = scanner.nextInt();
+                int subChoice = 0;
+                while (subChoice != 3) {
+                    System.out.println("\nSubmenu:");
+                    System.out.println("1. Show commands");
+                    System.out.println("2. Learn new command");
+                    System.out.println("3. Change animal species");
+                    System.out.println("4. Back to main menu");
+                    System.out.print("Enter your choice: ");
+                    subChoice = scanner.nextInt();
 
                                 switch (subChoice) {
                                     case 1:
-                                        Animal.showCommands();
+                                        instance.showCommands();
                                         break;
                                     case 2:
                                         while (true) {
@@ -54,17 +54,17 @@ public class Menu {
                                             if (command.equals("done")) {
                                                 break;
                                             }
-                                            Animal.getCommands().add(command);
+                                            instance.getCommands().add(command);
                                             break;
                                         }
                                     case 3:
-                                        System.out.println("Input correct species of " + Animal.getName());
+                                        System.out.println("Input correct species of " + instance.getName());
                                         for (Species s : Species.values()) {
                                             System.out.println(s);
                                         }
                                         System.out.print("Enter species: ");
                                         Species correctSpecies = Species.valueOf(scanner.nextLine().toUpperCase());
-                                        Animal.setSpecies(correctSpecies);
+                                        instance.setSpecies(correctSpecies);
                                         break;
                                     case 4:
                                         System.out.println("Returning to main menu...");
@@ -86,10 +86,13 @@ public class Menu {
                             System.out.println("Invalid choice. Please try again.");
 
 
+                        }
                     }
             }
         }
-    }
+
+
+
 
 
 

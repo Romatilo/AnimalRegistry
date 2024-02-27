@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 public class Animal {
-    private static String name;
-    private static Date birthDate;
-    private static Species species;
-    private static List<String> commands;
+    private String name;
+    private Date birthDate;
+    private Species species;
+    private List<String> commands;
 
     /*
      Animal constructor
@@ -25,7 +25,7 @@ public class Animal {
         this.name = name;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
@@ -41,11 +41,11 @@ public class Animal {
         return species;
     }
 
-    public static void setSpecies(Species species) {
-        Animal.species = species;
+    public void setSpecies(Species species) {
+        this.species = species;
     }
 
-    public static List<String> getCommands() {
+    public List<String> getCommands() {
         return commands;
     }
 
@@ -60,13 +60,13 @@ public class Animal {
     /*
     Show name, birthdate and species of the animal void
     */
-    public static void showAnimalData() {
+    public void showAnimalData() {
         System.out.println("Name: " + name);
         System.out.println("Birth Date: " + birthDate);
         System.out.println("Species: " + species);
     }
 
-    public static void showCommands() {
+    public void showCommands() {
         System.out.println("Commands:");
         for (String command : commands) {
             System.out.println("- " + command);
@@ -74,7 +74,7 @@ public class Animal {
     }
 
     public void addCommand(String command) {
-        Animal.commands.add(command);
+        commands.add(command);
     }
 
 

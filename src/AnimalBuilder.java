@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class AnimalBuilder {
     public static Animal createAnimalFromConsoleInput() {
+
 //        class Counter implements AutoCloseable {
 //            private int count = 0;
 //
@@ -60,7 +61,8 @@ public class AnimalBuilder {
             commands.add(command);
         }
 
-        return new Animal(name, birthDate, species, commands);
+        Animal animal = new Animal(name, birthDate, species, commands);
+        return animal;
 ////            counter.add();
 //
 //
