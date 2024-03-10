@@ -22,13 +22,17 @@ public class AnimalBuilder {
 //            }
 //        }
 //        try (Counter counter = new Counter()) {
-    /// name input
+        /// name input
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Enter animal's name: ");
         String name = scanner.nextLine();
+        if (name.equals(""))
+        {
+            System.out.println("Unacceptable name, default name \"Nameless\" is set for the animal");
+            name = "Nameless";
+        }
 
-    /// birthdate input
+        /// birthdate input
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         Date birthDate = null;
         boolean validDate = false;
@@ -44,12 +48,25 @@ public class AnimalBuilder {
             }
         }
 
+        /// species of the animal input
+        Species species = null;
+        boolean validSpecies = false;
+
         System.out.println("Choose animal's species:");
         for (Species s : Species.values()) {
             System.out.println(s);
         }
-        System.out.print("Enter species: ");
-        Species species = Species.valueOf(scanner.nextLine().toUpperCase());
+
+        while (!validSpecies) {
+            System.out.print("Enter species: ");
+            try {
+                species = Species.valueOf(scanner.nextLine().toUpperCase());
+                validSpecies = true;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid species. Please choose from the provided options.");
+            }
+        }
+
 
         System.out.println("Enter commands for the animal (type 'done' to finish):");
         ArrayList<String> commands = new ArrayList<>();

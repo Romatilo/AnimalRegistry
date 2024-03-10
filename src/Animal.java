@@ -1,7 +1,9 @@
 // Base Animal class
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 public class Animal {
     private String name;
     private Date birthDate;
@@ -12,21 +14,22 @@ public class Animal {
      Animal constructor
      */
     public Animal(String name, Date birthDate, Species species, ArrayList<String> commands) {
-        this.name = name;
-        this.birthDate = birthDate;
-        this.species = species;
-        this.commands = new ArrayList<>(commands);
+        setName(name);
+        setBirthDate(birthDate);
+        setSpecies(species);
+        setCommands(commands);
     }
 
     /*
      Getters and setters:
      */
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Date getBirthDate() {
@@ -57,6 +60,7 @@ public class Animal {
     public String toString() {
         return "{name='" + name + "'\n birthdate=" + birthDate + "'\n species = " + species + "}";
     }
+
     /*
     Show name, birthdate and species of the animal void
     */
