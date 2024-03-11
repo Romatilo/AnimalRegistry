@@ -80,12 +80,6 @@ public class Animal {
     public void addCommand(String command) {
         commands.add(command);
     }
-
-
-//    public void learnCommand(String newCommand) {
-//        addCommand(newCommand);
-//        System.out.println(name + " has learned a new command: " + newCommand);
-//    }
 }
 
 

@@ -10,7 +10,8 @@ public class Menu {
             System.out.println("1. Add new animal");
             System.out.println("2. Show animal list");
             System.out.println("3. Select existing animal to edit");
-            System.out.println("4. Exit");
+            System.out.println("4. Show counter value");
+            System.out.println("5. Exit");
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
@@ -39,6 +40,9 @@ public class Menu {
                     break;
 
                 case 4:
+                    System.out.println(AnimalBuilder.Counter.getCount());
+                    break;
+                case 5:
                     System.out.println("Good bye!");
                     end = true;
 
